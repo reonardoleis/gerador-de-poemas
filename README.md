@@ -1,2 +1,2 @@
 # gerador-de-poemas
-"Gerador de lero-lero" versão "poema'.
+Várias palavras estão classificadas com o gênero errado, WIP.
