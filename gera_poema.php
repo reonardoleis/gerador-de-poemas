@@ -61,7 +61,7 @@ for($i = 0; $i < NUMERO_DE_ESTROFES; $i++){
             $verbo_presente = substr($verbo_presente, 0, strlen($verbo_presente)-1) . 'e';
         }
         if($j == 0){
-            $poema.=ucfirst("$artigo $substantivo é $adjetivo, $adverbio");
+            $poema.=ucfirst("$artigo $substantivo é $adverbio $adjetivo ");
             if($adverbio == 'com'){
                 $random_substantivo     = rand(0, count($substantivos['palavras'])-1);
                 $poema.=" ".$substantivos['palavras'][$random_substantivo]['palavra'];
