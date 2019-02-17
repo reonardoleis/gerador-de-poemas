@@ -46,7 +46,7 @@ for($i = 0; $i < NUMERO_DE_ESTROFES; $i++){
         }else if ($substantivos['palavras'][$random_substantivo]['genero'] == "F"){
             $artigo = 'a';
         }
-        if(substr($adjetivo, strlen($adjetivo)-1, strlen($adjetivo)) != 'e'){
+        if(substr($adjetivo, strlen($adjetivo)-1, strlen($adjetivo)) != 'e' and substr($adjetivo, strlen($adjetivo)-1, strlen($adjetivo)) != 'l'){
             if($artigo == 'o'){
                 $adjetivo = substr($adjetivo, 0, strlen($adjetivo)-1) . 'o';
             }else if($artigo == 'a'){
