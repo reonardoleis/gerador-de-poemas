@@ -19,13 +19,19 @@ if($substantivos['palavras'][$random_substantivo]['genero'] == "M"){
 }else{
     $artigo = 'a';
 }
-if(substr($adjetivo, strlen($adjetivo)-1, strlen($adjetivo)) != 'e'){
-    if($artigo == 'o'){
-        $adjetivo = substr($adjetivo, 0, strlen($adjetivo)-1) . 'o';
-    }else if($artigo == 'a'){
-        $adjetivo = substr($adjetivo, 0, strlen($adjetivo)-1) . 'a';
-    }
+if(substr($adjetivo, strlen($adjetivo)-1, strlen($adjetivo)) != 'e' 
+        and substr($adjetivo, strlen($adjetivo)-1, strlen($adjetivo)) != 'l'
+        and substr($adjetivo, strlen($adjetivo)-1, strlen($adjetivo)) != 'r'){
+            if($artigo == 'o'){
+                $adjetivo = substr($adjetivo, 0, strlen($adjetivo)-1) . 'o';
+            }else if($artigo == 'a'){
+                $adjetivo = substr($adjetivo, 0, strlen($adjetivo)-1) . 'a';
+        }
 }
+
+$adjetivo = str_replace('aa', 'a', $adjetivo);
+$adjetivo = str_replace('oo', 'o', $adjetivo);
+
 
 $titulo = ucfirst("$artigo $substantivo $adjetivo");
 echo '<h3>' . $titulo . '</h3>';
@@ -39,6 +45,8 @@ for($i = 0; $i < NUMERO_DE_ESTROFES; $i++){
         $random_adverbio        = rand(0, count($adverbios['palavras'])-1);
         $substantivo    = $substantivos['palavras'][$random_substantivo]['palavra'];
         $adjetivo       = $adjetivos['palavras'][$random_adjetivo]['palavra'];
+        $adjetivo = str_replace('aa', 'a', $adjetivo);
+        $adjetivo = str_replace('oo', 'o', $adjetivo);
         $verbo          = $verbos['palavras'][$random_verbo]['palavra'];
         $adverbio       = $adverbios['palavras'][$random_adverbio]['palavra'];
         if($substantivos['palavras'][$random_substantivo]['genero'] == "M"){
